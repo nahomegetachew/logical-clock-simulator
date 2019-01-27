@@ -1,4 +1,4 @@
-#lamport and vector logical-clock-simulator
+lamport and vector logical-clock-simulator
 
 it is just fucken dumy lamport and vector logical clock simulator by me
 
