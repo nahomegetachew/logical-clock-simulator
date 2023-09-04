@@ -15,23 +15,3 @@ class process(object):
             # print(max(self.time_vector.values()),"hjk")
             return max(self.time_vector.values())
 
-
-    # def event(self):
-    #     self.time += 1
-    # def send(self,time):
-    #     self.time += 1
-    # def resive(self,time):
-    #     if time > self.time:
-    #         self.time = time + 1
-    #     else:
-    #         self.time += 1
-
-# a=process(0)
-# a.event()
-# a.send()
-# a.resive(5)
-# a.resive(3)
-# print(a.time)
-# b=process(0)
-# print(b.id)
-

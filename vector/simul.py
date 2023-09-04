@@ -1,6 +1,6 @@
 from __future__ import division
 import pygame
-from lamport import *
+from logical_vector import *
 from pygame.locals import *
 from sys import exit
 
@@ -15,7 +15,7 @@ logical_time = 0
 clock = pygame.time.Clock()
 lines = []
 points = []
-l = lamports(logical_time,no_of_p,0)
+l = logical_vector(logical_time,no_of_p,0)
 processes_ = l.prossess_
 gap=int(round(390 / no_of_p))
 gap_x = int(round(1000/no_of_p))
@@ -30,7 +30,7 @@ y=0
 p_t=0
 
 
-# for i in xrange(no_of_p):
+# for i in range(no_of_p):
 #     p=process(logical_time)
 #     processes_.append(p)
     
@@ -45,7 +45,7 @@ def draw_lines():
         y += distance_moved
         pygame.draw.aaline(screen, (255, 0, 0), (i[0], i[1]), (x , x))
         print(x,"ad")
-    for i in xrange(len(processes_)):
+    for i in range(len(processes_)):
         pygame.draw.line(screen, (0, 0, 0), (40, i*gap + 40 ),(1150,i*gap + 40))
         screen.blit( font.render("P" + str(i) , True, (255, 0, 0)), (10, i*gap + 30 ) )
     for i in lines:
@@ -55,7 +55,7 @@ def draw_lines():
 def draw_points():
         for i in points:
                 pygame.draw.circle(screen, (0,0,0), (i[0],i[1]), 3)
-                screen.blit( font_v.render( str(i[2]), True, (0, 0, 0)), (i[0] - int(round(10 * no_of_p)/2) ,i[1]) )
+                screen.blit( font_v.render( str(list(i[2])), True, (0, 0, 0)), (i[0] - int(round(10 * no_of_p)/2) ,i[1]) )
 
 
 
@@ -90,14 +90,14 @@ def draw_controlers():
     pcy=550 #primary controler y axis
     scy=450
      
-    for i in xrange(len(processes_)):
+    for i in range(len(processes_)):
         pygame.draw.circle(screen, (0,0,255), (i * gap_x + 100, pcy), 30, 1)
         screen.blit( font.render("P" + str(i), True, (0, 0, 0)), (i*gap_x + 90,pcy - 10) )
         if pressed[0] > i * gap_x + 80 and  pressed[0] < i * gap_x + 120:
                 if pressed[1] > pcy - 20 and pressed[1] < pcy + 20:
                         pygame.draw.line(screen, (0, 0, 0), (100, scy  + 22),((no_of_p - 1) * gap_x + 100,scy + 22),4)
                         selected_p = i
-                        for j in xrange(len(processes_)):
+                        for j in range(len(processes_)):
                                 pygame.draw.circle(screen, (255,0,0), (j * gap_x + 100, scy), 20, 2)
                                 screen.blit( font.render("P" + str(j), True, (0, 0, 0)), (j*gap_x + 90,scy - 10 ) )
                                 pygame.draw.line(screen, (0, 0, 0), (j * gap_x + 100, scy + 22),(j * gap_x + 100, scy + 30),4)
@@ -111,20 +111,11 @@ def draw_controlers():
         
                         
                         
-                              
-                
-        #lkasdf
-        # for i in xrange(len(processes_)):
-        #         if pressed[0] > i * gap_x + 80 and  pressed[0] < i * gap_x + 120:
-        #                 if pressed[1] > 460 and pressed[1] < 500:
-        #                         pygame.draw.circle(screen, (0,2,255), (i * 25 + 100, 480), 20, 1)
-        #                         print(pressed)
+                        
 
 def click_controlers(evnt):
         a=8
         
-        # x /= GRID_SQUARE_SIZE[0]
-        # y /= GRID_SQUARE_SIZE[1]               
 
 
 
@@ -147,39 +138,3 @@ while True:
 
     pygame.display.update()
     
-
-
-
-
-    # 
-    # mouse_pos = (55,55)
-
-    # time_passed = clock.tick(30)
-
-    # time_passed_seconds = time_passed / 1000.0
-
-
-    
-
-    # pygame.draw.aaline(screen, (0, 0, 0), (40, 20), (960,20))
-
-    # pygame.draw.aaline(screen, (0, 0, 0), (40, 120), (960,120))
-
-    # pygame.draw.aaline(screen, (0, 0, 0), (40, 220), (960,220))
-
-    # screen.blit( font.render("p0", True, (0, 0, 0)), (20, 10) )
-
-    # screen.blit( font.render("p1", True, (0, 0, 0)), (20, 110) )
-
-    # screen.blit( font.render("p2", True, (0, 0, 0)), (20, 210) )
-
-    # pygame.draw.circle(screen, (0,0,0), (100,20), 3)
-    # pygame.draw.circle(screen, (0,0,0), (200,120), 3)
-
-    # distance_moved = time_passed_seconds * speed
-    # x += distance_moved
-    # y += distance_moved
-    # pygame.draw.aaline(screen, (0, 0, 0), (100, 20), (x,y))
-
-
-        
