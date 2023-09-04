@@ -1,6 +1,6 @@
 Lamport and Vector Logical Clock Simulator
 
-This is a simple simulator for Lamport and Vector Logical Clocks, created by [Your Name]. It provides a visual representation of how these logical clocks work. Please note that this simulator is intended for educational purposes and should not be used for real-world or production projects without proper modifications.
+This is a simple simulator for Lamport and Vector Logical Clocks, created by Nahome Getachew. It provides a visual representation of how these logical clocks work. Please note that this simulator is intended for educational purposes and should not be used for real-world or production projects without proper modifications.
 Requirements
 
     Python 3.x
