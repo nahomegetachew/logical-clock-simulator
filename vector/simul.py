@@ -5,7 +5,7 @@ from pygame.locals import *
 from sys import exit
 
 
-no_of_p = eval(raw_input("Enter a number of porssesses you want: "))
+no_of_p = eval(input("Enter a number of porssesses you want: "))
 pygame.init()
 screen = pygame.display.set_mode((1200, 580), 0, 32)
 font = pygame.font.SysFont("arial", 16)
