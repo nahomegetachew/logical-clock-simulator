@@ -5,7 +5,7 @@ class lamports(object):
         self.prossess_ = {}
         self.time = time
         self.no=no_of_p
-        for i in xrange(self.no):
+        for i in range(self.no):
             x=process(init_time)
             print("ls = ",x.id)
             self.prossess_[x.id]=x
